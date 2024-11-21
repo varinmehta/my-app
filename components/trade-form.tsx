@@ -16,6 +16,8 @@ export function TradeForm({ onTrade }: TradeFormProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     onTrade(tradeType, symbol, quantity)
+    setSymbol('')
+    setQuantity(1)
   }
 
   return (
@@ -37,7 +39,7 @@ export function TradeForm({ onTrade }: TradeFormProps) {
           id="symbol"
           value={symbol}
           onChange={(e) => setSymbol(e.target.value.toUpperCase())}
-          placeholder="e.g., AAPL"
+          placeholder="e.g., ICICI"
           required
         />
       </div>
